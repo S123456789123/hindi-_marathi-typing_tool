@@ -1,11 +1,24 @@
-document.getElementById("typingArea").addEventListener("input", function(event) {
-    let text = event.target.value;
-    
-    // Simple Transliteration Logic (Example)
-    text = text.replace(/a/g, "अ");
-    text = text.replace(/aa/g, "आ");
-    text = text.replace(/i/g, "इ");
-    text = text.replace(/ii/g, "ई");
 
-    event.target.value = text; // Replace text in the textarea
+document.addEventListener("DOMContentLoaded", function () {
+    let textarea = document.getElementById("typingArea");
+    
+    if (textarea) {
+        textarea.addEventListener("input", function (event) {
+            let text = event.target.value;
+
+            console.log("Before:", text); // Debugging
+
+            // Simple Transliteration Logic
+            text = text.replace(/a/g, "अ");
+            text = text.replace(/aa/g, "आ");
+            text = text.replace(/i/g, "इ");
+            text = text.replace(/ii/g, "ई");
+
+            console.log("After:", text); // Debugging
+
+            event.target.value = text; // Replace text in the textarea
+        });
+    } else {
+        console.error("Textarea not found!");
+    }
 });
