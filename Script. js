@@ -1,0 +1,11 @@
+document.getElementById("typingArea").addEventListener("input", function(event) {
+    let text = event.target.value;
+    
+    // Simple Transliteration Logic (Example)
+    text = text.replace(/a/g, "अ");
+    text = text.replace(/aa/g, "आ");
+    text = text.replace(/i/g, "इ");
+    text = text.replace(/ii/g, "ई");
+
+    event.target.value = text; // Replace text in the textarea
+});
